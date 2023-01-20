@@ -36,3 +36,80 @@
     background-size: cover;
   }
 }
+
+.container {
+  max-width: $mobile-size;
+  margin: 0 auto;
+  padding: 0 1rem;
+
+  &--cta {}
+
+  &--hidden {}
+    background-color: var(--bg-color);
+    position: relative;
+    padding-block: 1.5rem;
+  
+}
+
+@media (min-device-pixel-ratio: 2),
+(min-resolution: 192dpi),
+(min-resolution: 2dppx) {
+  .section--cta {
+    background-image: linear-gradient($background-dark-transparent, $background-dark-transparent),
+      url('../images/main@2x.jpg');
+  }
+}
+@media (min-width: $desktop-size) {
+  .section {
+    padding: 5.875rem 0;
+  }
+
+  .section--cta {
+    height: 37.5rem;
+  }
+
+  .section__main-header {
+    font-size: font-size('main-header');
+  }
+
+  .section__header {
+    font-size: font-size('section-header-desktop');
+  }
+
+  .container--cta {
+    padding: 0 15.75rem;
+  }
+
+  .section--tutorial {
+    padding: 1rem 0;
+  }
+
+  .container {
+    min-width: $desktop-size;
+  }
+}
+
+@media (min-width: $tablet-size) {
+  .container--cta {
+    padding: 0 12.5rem;
+  }
+
+  .container {
+    text-align: center;
+    max-width: $tablet-size;
+  }
+}
+
+@media (min-width: $tablet-size) and (max-width: $desktop-size) {
+  .section--cta {
+    background-position: center;
+    background-image: linear-gradient($background-dark-transparent, $background-dark-transparent),
+      url('../images/main768.jpg');
+  }
+}
+
+@media (max-width: $desktop-size) {
+  .container--hidden {
+    display: none;
+  }
+}
