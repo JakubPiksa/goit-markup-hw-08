@@ -1,66 +1,35 @@
+@use '../utils/variables' as *;
+@use '../components/extends' as *;
+
+//klasa dla stylizowania boxa z newsletterem
+
 .newsletter {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  padding-top: 1.25rem;
 
-  &__email {
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
-    border-radius: 4px;
-    background-color: $bgnColor;
-    font-weight: 400;
-    font-size: 1rem;
+  &__email-box {
+    padding: 1rem 1rem;
+    width: min(93.75vw, 28.125rem);
+    border: 1px solid $border-newsletter;
+    border-radius: 0.25rem;
+    background-color: transparent;
+    font-size: font-size('medium');
     line-height: 1.25;
-    letter-spacing: 0.03em;
-    color: $contactColor;
-    outline: none;
-    padding: 15px 0 15px 16px;
-    margin-bottom: 20px;
-  }
-
-  &__input {
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 1.88;
-    color: $whiteColor;
-    background-color: $brandColor;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-    border-radius: 4px;
-    border-style: none;
-    margin: auto;
-    padding: 0.625rem 1.75rem 0.625rem 2.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  &__icon {
-    margin-left: 1.5rem;
-    display: inline-block;
-    fill: currentColor;
+    margin-bottom: 1.25rem;
+    color: font-color('newsletter');
+    box-shadow: 0px 0.25rem 0.25rem shadow('newsletter');
   }
 }
 
-@media screen and (min-width: 768px) {
-  .newsletter {
-    align-items: center;
-    &__email {
-      width: 450px;
-    }
-  }
-}
-
-@media screen and (min-width: 1200px) {
+@media (min-width: $desktop-size) {
   .newsletter {
     flex-direction: row;
     align-items: center;
-    gap: 12px;
-
-    &__email {
-      width: 350px;
-      margin-bottom: 0;
-    }
-    &__input {
-      width: 12.5rem;
-    }
+  }
+  .newsletter__email-box {
+    width: 350px;
+    margin-bottom: 0;
   }
 }

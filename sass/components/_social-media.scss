@@ -1,42 +1,29 @@
+@use '../utils/variables' as *;
+@use '../components/extends' as *;
+
+//klasa dla stylizowania icon social-media
+
 .social-media {
-  text-align: center;
-  margin-bottom: 60px;
-
-  &__title {
-    @extend %title;
-    text-transform: uppercase;
-    color: $whiteColor;
-    margin-bottom: 20px;
-  }
-
-  &__box {
-    @extend %box;
-    cursor: $cursor;
-    justify-content: center;
-
+  display: block;
+  width: 44px;
+  padding: 0.75rem;
+  border-radius: 50%;
+  @extend .default-transition;
+  &--footer {
+    color: font-color('contrast');
+    background-color: $icon-background;
     &:hover,
-    &:focus,
-    &:active {
-      fill: $whiteColor;
+    &:focus {
+      background-color: $active;
     }
   }
 
-  &__icon {
-    @extend %icon;
-    cursor: $cursor;
-    box-shadow: 0px 4px 4px $shadowColor;
-
+  &--team {
+    color: $icon-color;
     &:hover,
-    &:focus,
-    &:active {
-      background-color: $brandColor;
+    &:focus {
+      background-color: $active;
+      color: font-color('contrast');
     }
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .social-media {
-    text-align: left;
-    margin-bottom: 0;
   }
 }

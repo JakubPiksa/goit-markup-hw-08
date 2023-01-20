@@ -1,115 +1,89 @@
-.menu {
-  border-bottom: 1px solid $borderColor;
-  padding: 1rem 0;
+/* Klasy dla menu */
+@use '../utils/variables' as *;
+@use '../components/extends' as *;
 
-  &__box {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  &__main {
-    display: none;
-    visibility: hidden;
-    pointer-events: none;
-  }
-}
+.header {
+  padding: 1rem 0px;
+  background-color: var(--bg-color);
+  border-bottom: 1px solid $stroke-color;
 
-@media screen and (min-width: 768px) {
-  .menu {
-    padding: 1.25rem 0;
-
-    &__main {
-      display: flex;
-      justify-content: space-between;
-      flex-grow: 0.75;
-      visibility: visible;
-      pointer-events: auto;
-      align-items: center;
+  &__hyperlink {
+    color: var(--secondary-color);
+    @extend .default-transition;
+    &:hover,
+    &:focus {
+      color: $active;
     }
 
-    &__page {
-      font-size: 0.875rem;
-      line-height: 1.14;
-      letter-spacing: 0.02em;
-    }
-
-    &__nav {
-      text-decoration: none;
-      cursor: $cursor;
-      color: $textColor;
-
-      &:hover,
-      &:focus {
-        color: $brandColor;
-      }
-    }
-
-    &__box--tablet {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.625rem;
-      margin-left: 1rem;
-    }
-
-    &__icon {
-      vertical-align: middle;
-      fill: currentColor;
-      margin-right: 0.625rem;
-
-      &:hover,
-      &:focus,
-      &:active {
-        fill: $brandColor;
-      }
-    }
-    &__phone {
-      @extend .menu__nav;
-      font-weight: 500;
-      color: $paragraphColor;
-
-      &:hover,
-      &:focus {
-        color: $brandColor;
-      }
-    }
-
-    &__mail {
-      @extend .menu__phone;
-      margin-right: 3.125rem;
-
-      &:hover,
-      &:focus {
-        color: $brandColor;
-      }
-    }
-
-    &__nav--active {
-      color: $brandColor;
+    &--is-active {
+      color: $active;
+      position: relative;
 
       &:after {
-        content: "";
-        display: block;
-        background-color: $brandColor;
-        height: 4px;
+        content: '';
+        position: absolute;
+        transform: translateY(3.125rem);
+        top: 0px;
+        left: 0px;
         width: 100%;
+        height: 0.25rem;
+        background-color: $active;
         border-radius: 2px;
-        position: relative;
-        top: 32px;
       }
     }
   }
+
+  &__contacts {
+    @extend .flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    margin-left: 1rem;
+    align-items: flex-start;
+  }
+
+  &__links {
+    @extend .flex;
+    flex-grow: 1;
+    margin-left: 1rem;
+    align-items: flex-start;
+    gap: 3rem;
+  }
+}
+@media (min-width: $desktop-size) {
+  .header__contacts {
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 3rem;
+  }
+  .header__hyperlink--is-active:after {
+    transform: translateY(3.0625rem);
+  }
 }
 
-@media screen and (min-width: 1200px) {
-  .menu {
-    padding-top: 1.5rem;
-    padding-bottom: 1.56rem;
+@media (min-width: $tablet-size) {
+  .header {
+    padding: 1.25rem 0px;
+  }
+}
+@media (min-width: $desktop-size) {
+  .header {
+    padding: 1.75rem 0px;
+  }
+}
 
-    &__box--tablet {
-      display: block;
-      flex-direction: row;
-      align-items: flex-end;
-      gap: 3rem;
-    }
+.nav {
+  display: none;
+  visibility: hidden;
+  pointer-events: none;
+  align-items: center;
+}
+
+@media (min-width: $tablet-size) {
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 0.75;
+    visibility: visible;
+    pointer-events: auto;
   }
 }
