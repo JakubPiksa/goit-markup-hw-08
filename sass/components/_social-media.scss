@@ -1,29 +1,32 @@
-@use '../utils/variables' as *;
-@use '../components/extends' as *;
-
-//klasa dla stylizowania icon social-media
 .social-media {
-  display: block;
-  padding: 0.75rem;
-  border-radius: 50%;
-  @extend .default-transition;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 
-  &--footer {
-    color: font-color('contrast');
-    background-color: $icon-background;
+  &__link {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    fill: $brand-3rd-grey;
+    transition-property: background-color, fill;
+    transition-duration: $transitionDurationDeafault;
+    transition-timing-function: $tarnsitionTimingDefault;
+
     &:hover,
     &:focus {
-      background-color: $active;
+      fill: $brand-white;
+      background-color: $brand-light-navy;
     }
-  }
 
-  &--team {
-    color: $icon-color;
-    &:hover,
-    &:focus {
-      background-color: $active;
-      color: font-color('contrast'); 
-      
+    &:hover > .social-media__icon,
+    &:focus > .social-media__icon {
+      fill: $brand-white;
+      transition-property: fill;
+      transition-duration: $transitionDurationDeafault;
+      transition-timing-function: $tarnsitionTimingDefault;
     }
   }
 }

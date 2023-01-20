@@ -1,17 +1,21 @@
-/* Klasy dla logo - ogólna + szczególna */
-@use '../utils/variables' as *;
 .logo {
-  display: inline-block;
-  font-family: 'Raleway', sans-serif;
-  font-size: font-size('logo');
-  font-weight: 700;
-  letter-spacing: 0.03em;
-  color: $active;
-  &__header {
-    color: $logo;
-  }
-  &__footer {
-    color: font-color('contrast');
-    
-  }
+ font-family: 'Raleway';
+ font-weight: 700;
+ font-size: 24px;
+ line-height: 1.17;
+ letter-spacing: 0.03em;
+ color: $brand-light-navy;
+ text-decoration: none;
+
+ @include desktop {
+  font-size: 26px;
+ }
+
+ &__studio--white {
+  color: $brand-white;
+ }
+
+ &__studio--black {
+  color: $brand-black;
+ }
 }

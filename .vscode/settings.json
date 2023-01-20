@@ -1,15 +1,19 @@
 {
-    "json.format.enable": true,
-    "workbench.settings.useSplitJSON": true,
-    "files.autoSave": "afterDelay",
-    "liveSassCompile.settings.formats": [
+    "liveSassCompile.settings.formats":[
         {
-            "format": "compressed",
+            "format": "expanded",
             "extensionName": ".min.css",
-            "savePath": "~/../css"
+            "savePath": "~/../CSS",
+           
         }
     ],
     "liveSassCompile.settings.generateMap": true,
-    "liveSassCompile.settings.autoprefix": ["> 1%", "last 2 versions"],
-    "liveServer.settings.port": 5501
+    "liveSassCompile.settings.autoprefix": [
+        ">1%",
+        "last 2 versions"
+    ],
+    "files.autoSave": "off",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
 }
+
+

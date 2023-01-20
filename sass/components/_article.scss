@@ -1,25 +1,65 @@
-@use '../utils/variables' as *;
-
-//klasy dla artykułów
 .article {
+  &__list {
+    @include tablet {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+    @include desktop {
+      gap: 30px;
+    }
+  }
+
+  &__list-item {
+    margin-bottom: 30px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include tablet {
+      width: 354px;
+      margin-bottom: 0;
+    }
+
+    @include desktop {
+      width: 270px;
+    }
+  }
+
   &__icon-box {
-    padding: 25px 100px;
-    background-color: $button-color;
-    border-radius: 0.25rem;
-    margin-bottom: 1.875rem;
+    width: 100%;
+    margin-bottom: 30px;
+    padding: 25px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $brand-2nd-grey;
+    border-radius: 4px;
   }
 
-  &__header {
-    color: font-color('secondary');
-    text-transform: uppercase;
+  &__title {
+    margin-bottom: 10px;
+    text-align: center;
+    color: $brand-almost-black;
     font-weight: 700;
-    text-align: left;
-    margin-bottom: 0.625rem;
+    font-size: 14px;
+    line-height: 1.17;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+
+    @include desktop {
+      text-align: left;
+    }
   }
 
-  &__text {
-    font-weight: 400;
-    text-align: justify;
-    line-height: 1.7;
+  &__description {
+    font-size: 14px;
+    color: $brand-light-grey;
+
+    @include desktop {
+      line-height: 1.71;
+
+      text-align: justify;
+    }
   }
 }

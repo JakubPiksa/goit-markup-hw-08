@@ -1,57 +1,33 @@
-@use '../utils/variables' as *;
-@use '../components/extends' as *;
-
-/* OKNO MODUŁOWE */
-
 .is-hidden {
   pointer-events: none;
-  visibility: hidden;
   opacity: 0;
 }
 
 .backdrop {
   position: fixed;
-  left: 0;
-  top: 0;
-  width: 100vw;
-  height: 100vw;
-  background-color: $background-overlay;
-  @extend .modal-transition;
-}
-
-.is-hidden .modal {
-  opacity: 0;
-  transform: translate(-50%, -50%) scale(0.4);
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition-property: opacity;
+  transition-duration: $transitionDurationDeafault;
+  transition-timing-function: $tarnsitionTimingDefault;
 }
 
 .modal {
-  position: fixed;
-  justify-content: center;
-  top: 50%;
-  left: 50%;
-  opacity: 1;
-  @extend .modal-transition;
-  visibility: visible;
-  transform: translate(-50%, -50%) scale(1);
-  width: 528px;
-  background-color: font-color('contrast');
-  border-radius: 0.25rem;
-  @extend .box-shadow;
-
-  &__close-button {
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    width: 1.875rem;
-    height: 1.875rem;
-    padding: 9px;
-    border: 1px solid $close-circle;
-    background-color: font-color('contrast');
-    border-radius: 50%;
-    cursor: pointer;
-  }
-
-  &__close-icon {
-    display: block;
+  max-width: 450px;
+  min-height: 581px;
+  position: relative;
+  margin: 0 15px;
+  transition-property: opacity;
+  transition-duration: $transitionDurationDeafault;
+  transition-timing-function: $tarnsitionTimingDefault;
+  background-color: $brand-white;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  @include desktop {
+    max-width: 528px;
   }
 }

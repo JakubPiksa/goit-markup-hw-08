@@ -1,0 +1,95 @@
+.team {
+  background-color: $brand-2nd-grey;
+  @include tablet {
+    margin-top: -15px;
+  }
+
+  @include desktop {
+    margin-top: 0px;
+  }
+
+  &__title {
+    margin-bottom: 30px;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 1.18;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: $brand-almost-black;
+
+    @include desktop {
+      font-size: 36px;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    @include tablet {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    @include desktop {
+      justify-content: space-between;
+    }
+  }
+
+  &__item {
+    text-align: center;
+    background-color: $brand-white;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+      0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 4px 4px;
+  }
+
+  &__card {
+    margin-bottom: 1rem;
+
+    @include tablet {
+      margin-bottom: 30px;
+      width: 354px;
+    }
+
+    @include desktop {
+      width: 270px;
+    }
+  }
+
+  &__picture {
+    display: block;
+    margin-bottom: 30px;
+  }
+
+  &__member-ocupation {
+    margin-bottom: 16px;
+    display: block;
+    color: $brand-light-grey;
+    line-height: 1.17;
+    text-align: center;
+  }
+
+  &__member-name {
+    margin-bottom: 10px;
+    display: block;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.178;
+    text-align: center;
+    letter-spacing: 0.03em;
+
+    @include desktop {
+      font-weight: 500;
+      color: $brand-almost-black;
+      line-height: 1.17;
+    }
+  }
+
+  &__social-media {
+    margin-bottom: 24px;
+  }
+}
