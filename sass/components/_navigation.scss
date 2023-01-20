@@ -1,0 +1,10 @@
+@use '../utils/variables' as *;
+
+body {
+
+    color: blue($color: #000000);
+}
+p {
+    font-size: 15px;
+    font-weight: 700;
+}

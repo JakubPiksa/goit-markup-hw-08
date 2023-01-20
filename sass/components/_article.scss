@@ -1,7 +1,6 @@
 @use '../utils/variables' as *;
 
 //klasy dla artykułów
-
 .article {
   &__icon-box {
     padding: 25px 100px;
@@ -11,10 +10,10 @@
   }
 
   &__header {
-    color: var(--secondary-color);
+    color: font-color('secondary');
     text-transform: uppercase;
     font-weight: 700;
-    text-align: center;
+    text-align: left;
     margin-bottom: 0.625rem;
   }
 
@@ -22,14 +21,5 @@
     font-weight: 400;
     text-align: justify;
     line-height: 1.7;
-  }
-}
-
-@media (min-width: $tablet-size) {
-  .article__header {
-    text-align: left;
-  }
-  .article {
-    max-width: 22rem;
   }
 }
