@@ -31,7 +31,6 @@
     padding: 3rem 2.75rem 3rem 1.5rem;
     background-color: $active-transparent;
     @extend .default-transition;
-
     &-box:hover &,
     &-box:focus & {
       transform: translateY(-100%);

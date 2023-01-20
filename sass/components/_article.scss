@@ -23,12 +23,3 @@
     line-height: 1.7;
   }
 }
-@media (min-width: $tablet-size) {
-  .article__header {
-    text-align: left;
-  }
-
-  .article {
-    max-width: 22rem;
-  }
-}
