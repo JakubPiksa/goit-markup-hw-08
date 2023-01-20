@@ -8,6 +8,7 @@
   display: inline-block;
   color: $icon-color;
   @extend .default-transition;
+
   &:hover,
   &:focus {
     color: $active;

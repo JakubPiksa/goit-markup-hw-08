@@ -12,7 +12,7 @@
     font-size: font-size('large');
     font-weight: 700;
 
-    color: font-color('secondary');
+    color: var(--secondary-color);
     margin-bottom: 0.75rem;
   }
 
@@ -26,7 +26,7 @@
 
   &__input {
     background-color: transparent;
-    border: 1px solid $input-border;
+    border: 1px solid $border;
     border-radius: 0.25rem;
     padding: 0.75rem 0.75rem 0.75rem 2.625rem;
     margin-bottom: 0.625rem;
@@ -50,7 +50,7 @@
   &__label-box {
     display: flex;
     flex-direction: column;
-    fill: font-color('secondary');
+    fill: var(--secondary-color);
     @extend .default-transition;
 
     &:focus-within {
@@ -61,7 +61,7 @@
   &__adnotations {
     position: scroll;
     padding: 0.75rem 1rem;
-    border: 1px solid $input-border;
+    border: 1px solid $border;
     border-radius: 0.25rem;
     height: 7.5rem;
     margin-bottom: 1.25rem;
@@ -70,9 +70,11 @@
     letter-spacing: 0.01em;
     resize: none;
     @extend .default-transition;
+
     &::placeholder {
       color: font-color('primary-transparent');
     }
+
     &:focus-within {
       outline: none;
       border-color: $active;
@@ -84,8 +86,7 @@
     line-height: 1.7;
     font-weight: 400;
     margin-bottom: 1.875rem;
-    margin-left: 0.25rem;
-    padding-left: 0.5rem;
+    text-align: center;
   }
 
   &__checkbox {
@@ -99,17 +100,17 @@
 
   &__check-border {
     position: absolute;
-    top: 0.25rem;
+    top: 0.125rem;
     left: 0;
     width: 1rem;
     height: 1rem;
-    border: 2px solid font-color('secondary');
+    border: 1px solid var(--secondary-color);
     border-radius: 2px;
     margin-right: 0.5rem;
     @extend .default-transition;
   }
 
-  &__checkbox:checked + &__check-border {
+  &__checkbox:checked+&__check-border {
     background-color: $active;
     outline: none;
     border: none;
@@ -117,7 +118,7 @@
     background-position: center center;
   }
 
-  &__checkbox:checked + &__check-border > &__check-icon {
+  &__checkbox:checked+&__check-border>&__check-icon {
     visibility: visible;
   }
 

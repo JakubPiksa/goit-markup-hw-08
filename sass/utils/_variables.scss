@@ -1,6 +1,15 @@
 /* Deklaracja zmiennych globalnych dla kolorów */
 @forward '../utils/maps';
 
+:root {
+    --primary-color: #302ae6;
+    --secondary-color: #212121;
+    --font-color: #424242;
+    --bg-color: #fff;
+    --heading-color: #292922;
+    --logo: #000000;
+}
+
 $active: #2196f3;
 $active-transparent: rgba(33, 150, 243, 0.9);
 $logo: #000000;

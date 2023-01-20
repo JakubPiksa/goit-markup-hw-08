@@ -2,6 +2,7 @@
 @use '../components/extends' as *;
 
 //klasa dla stylizowania icon social-media
+
 .social-media {
   display: block;
   width: 44px;
@@ -12,6 +13,7 @@
   &--footer {
     color: font-color('contrast');
     background-color: $icon-background;
+
     &:hover,
     &:focus {
       background-color: $active;
@@ -20,11 +22,11 @@
 
   &--team {
     color: $icon-color;
+
     &:hover,
     &:focus {
       background-color: $active;
-      color: font-color('contrast'); 
-      
+      color: font-color('contrast');
     }
   }
 }

@@ -9,6 +9,7 @@
   &--customers {
     flex-wrap: wrap;
     gap: min(5vw, 1.875rem);
+
     & * {
       margin-inline: auto;
     }
@@ -30,6 +31,7 @@
   &--social-media {
     justify-content: center;
     gap: 0.625rem;
+
     * {
       flex-basis: 2.75rem;
     }
@@ -42,12 +44,14 @@
 }
 
 @media (min-width: $tablet-size) {
+
   .flex--article,
   .flex--team {
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
   }
+
   .flex--footer {
     flex-direction: row;
     flex-wrap: wrap;
@@ -56,6 +60,7 @@
 }
 
 @media (min-width: $desktop-size) {
+
   .flex--customers,
   .flex--article,
   .flex--team,
@@ -63,11 +68,13 @@
   .flex--newsletter {
     flex-wrap: nowrap;
   }
+
   .flex--footer {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
   }
+
   .flex--article {
     margin-bottom: $section-padding;
   }
